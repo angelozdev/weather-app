@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactNode
 }
 
-function Hero({ children }: Props) {
+function Hero({ children }: Props): JSX.Element {
   return (
     <div className="hero">
       <figure>

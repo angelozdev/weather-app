@@ -1,0 +1,38 @@
+.forecast-item
+  align-items: center
+  border: 1px solid var(--hightlight-color)
+  border-radius: 1rem
+  display: flex
+  justify-content: space-between
+  margin-bottom: 0.5rem
+
+
+  &__icon
+    align-items: center
+    display: flex
+
+    img
+      height: 100%
+      width: 50px
+
+  &__degrees
+    background-color: var(--hightlight-color)
+    border-radius: 1rem
+    font-size: 1rem
+    font-weight: 700
+    padding: 0.5rem 1rem
+    transition: all ease 300ms
+
+  &:hover &__degrees
+    background-color: var(--secondary-color)
+    color: #fff
+
+  &__details
+    p
+      margin: 0
+
+    &__title
+      font-weight: 700
+
+    &__description
+      color: #525252

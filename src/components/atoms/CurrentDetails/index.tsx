@@ -3,7 +3,7 @@ import React from 'react'
 /* Styles */
 import './style.sass'
 
-function CurrentDetails() {
+function CurrentDetails(): JSX.Element {
   return (
     <div className="details">
       <div className="details__card details__card--primary">
