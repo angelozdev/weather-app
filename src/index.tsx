@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import App from './App'
 
 /* Styles */
-import './styles/globalStyle.styl'
+import './styles/globalStyle.sass'
 
 const root = document.getElementById('root')
 
