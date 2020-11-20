@@ -1,11 +1,10 @@
 import React from 'react'
 
+/* Pages */
+import { Home } from './components/pages'
+
 function App(): JSX.Element {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  )
+  return <Home />
 }
 
 export default App
