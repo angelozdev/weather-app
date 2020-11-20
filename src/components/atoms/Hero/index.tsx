@@ -1,9 +1,17 @@
 import React from 'react'
 
+/* Components */
+import { Map } from '../../Icons'
+
 /* Styles */
 import './style.sass'
 
-function Hero() {
+/* Types */
+interface Props {
+  children: React.ReactNode
+}
+
+function Hero({ children }: Props) {
   return (
     <div className="hero">
       <figure>
@@ -12,6 +20,11 @@ function Hero() {
           alt=""
         />
       </figure>
+      <h4 className="city">
+        <Map strokeWidth="2px" width="1.5rem" height="1.5rem" />
+        <span>Bogotá</span>
+      </h4>
+      {children}
     </div>
   )
 }

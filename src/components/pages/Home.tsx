@@ -1,13 +1,13 @@
 import React from 'react'
 
 /* Components */
-import { Hero } from '../atoms'
+import { HeroWithDetails } from '../molecules'
 import { Main } from '../template'
 
 function App(): JSX.Element {
   return (
     <Main>
-      <Hero />
+      <HeroWithDetails />
     </Main>
   )
 }
