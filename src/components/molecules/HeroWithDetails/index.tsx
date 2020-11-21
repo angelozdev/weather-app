@@ -19,7 +19,7 @@ function HeroWithDetails() {
   }
 
   return (
-    <Hero name={data?.name}>
+    <Hero main={data?.weather[0].main} name={data?.name}>
       <CurrentDetails
         main={data?.weather[0].main}
         icon={data?.weather[0].icon}

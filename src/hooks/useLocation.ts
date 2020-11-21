@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 
 /* Types */
 interface Location {
-  lat: number | null
-  lon: number | null
+  lat: number
+  lon: number
 }
 
 function useLocation() {
   const [location, setLocation] = useState<Location>({
-    lat: 4.6,
-    lon: -74
+    lat: 4.60971,
+    lon: -74.08175
   })
 
   useEffect(() => {

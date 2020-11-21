@@ -71,6 +71,6 @@ module.exports = {
     new MiniCssExtractP({
       filename: 'styles/[name].[chunkhash].css'
     }),
-    devMode && new Dotenv()
+    devMode ? new Dotenv() : () => null
   ]
 }
