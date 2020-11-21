@@ -9,9 +9,10 @@ import './style.sass'
 /* Types */
 interface Props {
   children: React.ReactNode
+  name: string
 }
 
-function Hero({ children }: Props): JSX.Element {
+function Hero({ children, name }: Props): JSX.Element {
   return (
     <div className="hero">
       <figure>
@@ -22,7 +23,7 @@ function Hero({ children }: Props): JSX.Element {
       </figure>
       <h4 className="city">
         <Map strokeWidth="2px" width="1.5rem" height="1.5rem" />
-        <span>Bogotá</span>
+        <span>{name || 'Bogotá'}</span>
       </h4>
       {children}
     </div>

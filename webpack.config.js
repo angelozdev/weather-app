@@ -4,6 +4,7 @@ const path = require('path')
 const HtmlWP = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractP = require('mini-css-extract-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
@@ -69,6 +70,7 @@ module.exports = {
     }),
     new MiniCssExtractP({
       filename: 'styles/[name].[chunkhash].css'
-    })
+    }),
+    devMode && new Dotenv()
   ]
 }
