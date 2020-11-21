@@ -1,0 +1,50 @@
+.random-cities
+  &__header
+    align-items: center
+    color: var(--subtitle-color)
+    cursor: pointer
+    display: flex
+    line-height: 32px
+    margin: 24px 0
+
+    span
+      font-size: 0.8rem
+      margin: 0 0.5rem
+
+  &__reviewers
+    display: flex
+
+    img
+      border-radius: 5px
+      margin-left: 0.1rem
+      width: 25px
+
+  &__body
+    figure
+      border-radius: 1rem
+      cursor: pointer
+      height: 100%
+      margin: 0 0 1rem
+      overflow: hidden
+      position: relative
+      transition: all ease 300ms
+
+      &:hover
+        box-shadow: 5px 25px 30px rgba(0, 0, 0, 0.1)
+
+
+      img
+        height: 100px
+        object-fit: cover
+        width: 100%
+
+      figcaption
+        align-items: center
+        color: #fff
+        display: flex
+        left: 1rem
+        position: absolute
+        top: 1rem
+
+      span
+        margin-left: 0.5rem

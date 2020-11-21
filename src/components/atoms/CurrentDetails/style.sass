@@ -1,7 +1,9 @@
+@import '../../../styles/breakpoints'
+
 .details
   align-items: stretch
   border-radius: 0 1.5rem 1.5rem 0
-  box-shadow: 5px 25px 30px rgba(0, 0, 0, 0.3)
+  box-shadow: 5px 25px 30px rgba(0, 0, 0, 0.2)
   color: #fff
   display: inline-flex
   flex-direction: column
@@ -10,10 +12,13 @@
   position: absolute
   top: 50%
   transform: translateX(-50%) translateY(-50%)
+  transition: all ease 300ms
 
+  &:hover
+    box-shadow: 5px 25px 30px rgba(0, 0, 0, 0.3)
 
   &__card
-    padding: 1rem
+    padding: 1rem 0.5rem
     text-align: center
 
   &__card--primary
@@ -32,3 +37,11 @@
     font-weight: 600
     margin-top: -1.5rem
     padding-top: 1.5rem
+
+@media ( max-width: $bp-md )
+  .details
+    transform: translateX(-35%) translateY(-50%) scale(.8)
+
+@media ( max-width: $bp-sm )
+  .details
+    transform: translateX(-40%) translateY(-50%) scale(.5)
