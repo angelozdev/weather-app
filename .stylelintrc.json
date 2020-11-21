@@ -3,5 +3,7 @@
     "stylelint-config-sass-guidelines",
     "stylelint-config-idiomatic-order"
   ],
-  "rules": { "max-nesting-depth": [10] }
+  "rules": {
+    "max-nesting-depth": [10]
+  }
 }

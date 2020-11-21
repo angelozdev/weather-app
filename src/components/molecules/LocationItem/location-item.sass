@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoints'
+
 .location-item
   background-color: #fff
   border-radius: 1rem
@@ -41,6 +43,8 @@
     margin: 0
     overflow: hidden
     width: 100px
+    background-color: var(--highlight-color)
+    padding: 1rem
 
     img
       height: 100%
@@ -51,3 +55,13 @@
     display: flex
     justify-content: space-between
     padding: 1rem
+
+@media screen and ( max-width: $bp-md )
+  .location-item__degree
+    p
+      font-size: 2rem
+
+@media screen and ( max-width: $bp-sm )
+  .location-item__degree
+    p
+      font-size: 1.5rem

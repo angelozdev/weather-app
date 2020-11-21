@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoints'
+
 .details
   align-items: stretch
   border-radius: 0 1.5rem 1.5rem 0
@@ -35,3 +37,11 @@
     font-weight: 600
     margin-top: -1.5rem
     padding-top: 1.5rem
+
+@media ( max-width: $bp-md )
+  .details
+    transform: translateX(-35%) translateY(-50%) scale(.8)
+
+@media ( max-width: $bp-sm )
+  .details
+    transform: translateX(-40%) translateY(-50%) scale(.5)
