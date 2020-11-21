@@ -41,15 +41,17 @@ function Hero({ children, name, main }: Props): JSX.Element {
   }
 
   return (
-    <div className="hero">
-      <figure>
-        <img src={setImage(main)} alt={`sky ${main} image`} />
-      </figure>
-      <h4 className="hero__city">
-        <Map strokeWidth="2px" width="1.5rem" height="1.5rem" />
-        <span>{name}</span>
-      </h4>
-      {children}
+    <div className="hero-container">
+      <div className="hero">
+        <figure>
+          <img src={setImage(main)} alt={`sky ${main} image`} />
+        </figure>
+        <h4 className="hero__city">
+          <Map strokeWidth="2px" width="1.5rem" height="1.5rem" />
+          <span>{name}</span>
+        </h4>
+        {children}
+      </div>
     </div>
   )
 }
