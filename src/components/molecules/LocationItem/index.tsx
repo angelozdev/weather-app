@@ -19,8 +19,6 @@ interface Props {
 function LocationItem({ coords, country, city }: Props) {
   const { data, loading } = useGetCurrentWeather(coords)
 
-  console.log(data)
-
   if (loading) {
     return <p>Loading...</p>
   }
