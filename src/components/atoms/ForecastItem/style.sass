@@ -1,11 +1,16 @@
 .forecast-item
   align-items: center
-  border: 1px solid var(--hightlight-color)
+  background-color: #fff
+  border: 1px solid var(--highlight-color)
   border-radius: 1rem
   display: flex
   justify-content: space-between
   margin-bottom: 0.5rem
   padding-left: 0.5rem
+  transition: all ease 300ms
+
+  &:hover
+    box-shadow: 5px 25px 30px rgba(0, 0, 0, 0.1)
 
 
   &__icon
@@ -17,7 +22,7 @@
       width: 50px
 
   &__degrees
-    background-color: var(--hightlight-color)
+    background-color: var(--highlight-color)
     border-radius: 1rem
     font-size: 1rem
     font-weight: 700

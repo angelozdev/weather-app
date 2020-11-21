@@ -1,7 +1,7 @@
 import React from 'react'
 
 /* Components */
-import { Forecast, PlaceToVisit, RandomCities } from '../organisms'
+import { Forecast, Locations, PlaceToVisit, RandomCities } from '../organisms'
 import { HeroWithDetails } from '../molecules'
 import { Main } from '../template'
 
@@ -12,6 +12,7 @@ function App(): JSX.Element {
       <Forecast />
       <PlaceToVisit />
       <RandomCities />
+      <Locations />
     </Main>
   )
 }
