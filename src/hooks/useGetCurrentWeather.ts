@@ -6,36 +6,14 @@ interface Location {
   lon: number | null
 }
 
-function useGetCurrentWeather() {
-  const [location, setLocation] = useState<Location>({
-    lat: 4.6,
-    lon: -74
-  })
-
-  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${config.API_KEY}&units=metric`
+function useGetCurrentWeather({ lon, lat }: Location) {
+  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${config.API_KEY}&units=metric`
   const [data, setData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<null | Error>(null)
 
   useEffect(() => {
-    const success: PositionCallback = ({ coords }) => {
-      setLocation({
-        lat: coords.latitude,
-        lon: coords.longitude
-      })
-    }
-
-    const error: PositionErrorCallback = (err) => {
-      console.error(err)
-    }
-
-    if ('geolocation' in navigator) {
-      navigator.geolocation.watchPosition(success, error)
-    }
-  }, [location.lat, location.lon])
-
-  useEffect(() => {
-    if (location.lon && location.lat) {
+    if (lon && lat) {
       fetch(URL)
         .then((res) => res.json())
         .then((data) => {
@@ -43,10 +21,6 @@ function useGetCurrentWeather() {
         })
         .catch((err) => {
           setError(err)
-          setLocation({
-            lat: 4.6,
-            lon: -74
-          })
         })
         .finally(() => {
           setLoading(false)
@@ -59,7 +33,7 @@ function useGetCurrentWeather() {
       request.open('GET', URL, true)
       request.send(null) */
     }
-  }, [URL])
+  }, [lon, lat])
 
   return { data, loading, error }
 }

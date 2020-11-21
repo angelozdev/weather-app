@@ -8,10 +8,11 @@ import { Hero, CurrentDetails } from '../../atoms'
 
 /* Hooks */
 import useGetCurrentWeather from '../../../hooks/useGetCurrentWeather'
+import useLocation from '../../../hooks/useLocation'
 
 function HeroWithDetails() {
-  const { data, error, loading } = useGetCurrentWeather()
-  console.log(data)
+  const { lat, lon } = useLocation()
+  const { data, loading } = useGetCurrentWeather({ lat, lon })
 
   if (loading) {
     return <p>loading...</p>
