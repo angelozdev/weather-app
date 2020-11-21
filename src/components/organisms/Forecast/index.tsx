@@ -1,9 +1,15 @@
 import React from 'react'
+
+/* Components */
 import { ForecastItem } from '../../atoms'
 import { Card } from '../../molecules'
 
+/* Hooks */
+import useLocation from '../../../hooks/useLocation'
+import useGetDaysForecast from '../../../hooks/useGetDaysForecast'
+
 function Forecast() {
-  const items = {
+  /* const items = {
     city: {
       name: 'Bogotá'
     },
@@ -39,10 +45,18 @@ function Forecast() {
         ]
       }
     ]
+  } */
+
+  const { lat, lon } = useLocation()
+  const { data, loading } = useGetDaysForecast({ lat, lon })
+
+  if (loading) {
+    return <p>Loading...</p>
   }
+
   return (
     <Card subtitle="Forecast" title="3 Days">
-      {items.list.map((item, index) => {
+      {data.daily.slice(1, 4).map((item: any, index: number) => {
         const { dt, temp, weather } = item
         return (
           <ForecastItem

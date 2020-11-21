@@ -25,9 +25,7 @@ function ForecastItem({
     <div className="forecast-item">
       <div className="forecast-item__icon">
         <img
-          src={
-            'http://png-4.vector.me/files/images/3/8/384388/tango_weather_overcast_thumb'
-          }
+          src={`https://openweathermap.org/img/w/${icon}.png`}
           alt={`icon ${description}`}
         />
       </div>
@@ -35,7 +33,7 @@ function ForecastItem({
         <p className="forecast-item__details__title">
           {new Intl.DateTimeFormat('en-US', {
             weekday: 'long'
-          }).format(date)}
+          }).format(date * 1000)}
         </p>
         <p className="forecast-item__details__description">{main}</p>
       </div>

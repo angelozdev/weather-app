@@ -8,8 +8,7 @@ interface Location {
 }
 
 function useGetDaysForecast({ lat, lon }: Location) {
-  const API_KEY = config.API_KEY
-  const URL = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=${3}&appid=${API_KEY}`
+  const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,current,alerts&appid=${config.API_KEY}&units=metric`
   const [data, setData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<null | Error>(null)
