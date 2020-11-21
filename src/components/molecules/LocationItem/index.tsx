@@ -1,30 +1,54 @@
 import React from 'react'
 
-/* Item */
+/* Hooks */
+import useGetCurrentWeather from '../../../hooks/useGetCurrentWeather'
+
+/* Styles */
 import './location-item.sass'
 
-function LocationItem() {
+/* Types */
+interface Props {
+  coords: {
+    lat: number
+    lon: number
+  }
+  country: string
+  city: string
+}
+
+function LocationItem({ coords, country, city }: Props) {
+  const { data, loading } = useGetCurrentWeather(coords)
+
+  console.log(data)
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
+
   return (
     <div className="location-item">
       <div className="location-item__body">
         <figure className="location-item__image">
-          <img src="https://picsum.photos/200" alt="" />
+          <img
+            src={`https://openweathermap.org/img/w/${data?.weather[0].icon}.png`}
+            alt=""
+          />
         </figure>
         <div className="location-item__degree">
-          <p>29</p>
+          <p>{data?.main.temp}</p>
           <sub>°c</sub>
         </div>
         <div className="location-item__names">
-          <p className="location-item__country">Lyon</p>
-          <p className="location-item__city">Francia</p>
+          <p className="location-item__country">{country}</p>
+          <p className="location-item__city">{city}</p>
         </div>
       </div>
       <div className="location-item__footer">
         <a className="location-item__humidity">
-          Humidity <span>64%</span>
+          Humidity <span>{data?.main.humidity}%</span>
         </a>
-        <a className="location-item__main">West</a>
-        <a className="location-item__velocity">8.3m/h</a>
+        <a className="location-item__main">{data?.weather[0].main}</a>
+        <a className="location-item__velocity">{data?.wind.speed}m/h</a>
       </div>
     </div>
   )

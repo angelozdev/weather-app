@@ -18,7 +18,8 @@ enum WeatherStatus {
   DRIZZLE = 'Drizzle',
   CLOUDS = 'Clouds',
   CLEAR = 'Clear',
-  RAIN = 'Rain'
+  RAIN = 'Rain',
+  THUNDERSTORM = 'Thunderstorm'
 }
 
 function Hero({ children, name, main }: Props): JSX.Element {
@@ -26,6 +27,8 @@ function Hero({ children, name, main }: Props): JSX.Element {
     switch (main) {
       case WeatherStatus.DRIZZLE:
         return 'https://images.unsplash.com/photo-1576234699886-7eb7f11aecb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+      case WeatherStatus.THUNDERSTORM:
+        return 'https://images.unsplash.com/photo-1600323847785-fe21bc36acdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
       case WeatherStatus.CLOUDS:
         return 'https://images.unsplash.com/photo-1484291704816-654a85f64ff3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1545&q=80'
       case WeatherStatus.CLEAR:
